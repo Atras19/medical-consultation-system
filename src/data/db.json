@@ -1,0 +1,30 @@
+{
+  "doctors": [
+    {
+      "id": "doc-1",
+      "firstName": "Anna",
+      "lastName": "Karaś",
+      "specialization": "Kardiolog"
+    },
+    {
+      "id": "doc-2",
+      "firstName": "Janusz",
+      "lastName": "Malarz",
+      "specialization": "Chirurg"
+    }
+  ],
+  "availabilities": [
+    {
+      "id": "av1",
+      "doctorId": "doc-1",
+      "isCyclic": true,
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "daysOfWeek": [1, 2, 4, 5], 
+      "startTime": "08:00",
+      "endTime": "14:00"
+    }
+  ],
+  "absences": [],
+  "reservations": []
+}
