@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Medical Consultation System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This repository contains a full-stack web application designed to facilitate medical consultations. The system is split into a frontend client and a backend server, providing a complete environment for managing consultation processes.
 
-Currently, two official plugins are available:
+## Technologies
+The project is built using modern web development tools:
+* Frontend: React, TypeScript, Vite
+* Styling: Tailwind CSS
+* Backend: Node.js (located in the `server` directory)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
+* src/ - Contains the frontend source code (React components, views, and assets).
+* server/ - Contains the backend logic and server configuration.
+* package.json - Defines the dependencies and scripts for the frontend application.
+* tailwind.config.js / vite.config.ts - Configuration files for styling and the build tool.
 
-## React Compiler
+## How to run
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+Ensure you have Node.js and npm (or another package manager like yarn/pnpm) installed on your system.
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the repository to your local machine:
+git clone https://github.com/Atras19/medical-consultation-system.git
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. Navigate to the project directory:
+cd medical-consultation-system
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. Install frontend dependencies:
+npm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4. Install backend dependencies (assuming a separate package.json exists in the server folder):
+cd server
+npm install
+cd ..
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Execution
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To run the application locally for development, you will typically need to start both the frontend and backend servers.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Start the backend server:
+cd server
+npm run dev
+
+2. Start the frontend development server (in a new terminal window):
+npm run dev
+
+The frontend should now be accessible via your web browser (typically at http://localhost:5173). Check your terminal outputs for exact local addresses and port numbers.
